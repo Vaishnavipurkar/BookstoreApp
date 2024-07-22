@@ -18,8 +18,9 @@ The Bookstore App is a basic web application that allows users to perform CRUD o
 
 - **ASP.NET Core MVC**: Web framework for building the application.
 - **Entity Framework Core**: ORM for interacting with the database.
-- **SQL Server**: Database management system.
+- **SQLite**: Database management system.
 - **Bootstrap**: For styling the HTML pages.
+- **Razor Pages**
 
 ## Features
 
@@ -34,6 +35,16 @@ The Bookstore App is a basic web application that allows users to perform CRUD o
 - .NET SDK (version 6.0 or later)
 - SQL Server
 - Visual Studio or any other C# IDE
+
+### Project Structure
+-**Models**
+-Book.cs: Defines the Book model with properties like Id, Title, Author, Genre, and Price.
+-**Data**
+BookstoreContext.cs: Database context configured to use SQLite.
+-**Controllers**
+BooksController.cs: Handles HTTP requests related to book operations.
+-**Views**
+Razor Pages for each action in the BooksController (Index, Details, Create, Edit, Delete).
 
 ### Installation
 
