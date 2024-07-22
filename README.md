@@ -9,7 +9,6 @@ A simple web application for managing a bookstore built using ASP.NET Core MVC.
 - [Setup](#setup)
 - [Running the Application](#running-the-application)
 - [Usage](#usage)
-- [Contributing](#contributing)
 
 ## Overview
 
@@ -27,7 +26,6 @@ The Bookstore App is a basic web application that allows users to perform CRUD o
 - **CRUD Operations**: Create, Read, Update, and Delete books.
 - **Pagination**: Display books in a paginated view.
 - **Search Functionality**: Search books by Title, Author, or Genre.
-- **Dynamic Search**: (To be implemented) Real-time search results as the user types.
 
 ## Setup
 
