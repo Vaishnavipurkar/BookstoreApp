@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BookstoreApp.Data;
 using BookstoreApp.Models;
@@ -31,14 +31,6 @@ namespace BookstoreApp
             return View(books);
         }
 
-
-        // GET: Check for Duplicate Book
-        [HttpGet]
-        public async Task<IActionResult> CheckDuplicate(string title, string author)
-        {
-            var isDuplicate = await _context.Books.AnyAsync(b => b.Title.ToLower() == title.ToLower() && b.Author.ToLower() == author.ToLower());
-            return Json(isDuplicate);
-        }
 
         // GET and POST: Search 
         public async Task<IActionResult> Search(string searchterm, int? page)
@@ -118,7 +110,7 @@ namespace BookstoreApp
             return View(book);
         }
 
-        // GET: Books/Edit/5
+        // GET: Books/Edit
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
