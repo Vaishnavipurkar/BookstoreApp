@@ -37,14 +37,14 @@ The Bookstore App is a basic web application that allows users to perform CRUD o
 - Visual Studio or any other C# IDE
 
 ### Project Structure
--**Models**
--Book.cs: Defines the Book model with properties like Id, Title, Author, Genre, and Price.
--**Data**
-BookstoreContext.cs: Database context configured to use SQLite.
--**Controllers**
-BooksController.cs: Handles HTTP requests related to book operations.
--**Views**
-Razor Pages for each action in the BooksController (Index, Details, Create, Edit, Delete).
+- **Models**
+- Book.cs: Defines the Book model with properties like Id, Title, Author, Genre, and Price.
+- **Data**
+- BookstoreContext.cs: Database context configured to use SQLite.
+- **Controllers**
+- BooksController.cs: Handles HTTP requests related to book operations.
+- **Views**
+- Razor Pages for each action in the BooksController (Index, Details, Create, Edit, Delete).
 
 ### Installation
 
