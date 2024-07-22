@@ -41,36 +41,4 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-@section Scripts {
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#createForm").on("submit", function (event) {
-                event.preventDefault();
 
-                var title = $("#Title").val().trim();
-                var author = $("#Author").val().trim();
-
-                $.ajax({
-                    url: '@Url.Action("CheckDuplicate", "Books")',
-                    type: 'GET',
-                    data: {
-                        title: title,
-                        author: author
-                    },
-                    success: function (isDuplicate) {
-                        if (isDuplicate) {
-                            alert("This book already exists.");
-                        } else {
-                       
-                            $("#createForm")[0].submit();
-                        }
-                    },
-                    error: function () {
-                        alert("Error checking for duplicate book.");
-                    }
-                });
-            });
-        });
-    </script>
-}
