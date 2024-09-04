@@ -1,0 +1,25 @@
+﻿@model BookstoreApp.Models.Purchase
+
+<h2>Complete Payment</h2>
+
+<p>Book: @Model.Book.Title</p>
+<p>Price: @Model.TotalPrice</p>
+
+<form asp-action="CompletePayment" method="post">
+    <input type="hidden" id="stripeSessionId" value="@ViewBag.StripeSessionId" />
+    <button id="checkout-button" type="button" class="btn btn-primary">Pay with Card</button>
+</form>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript">
+    var stripe = Stripe('@ViewBag.StripePublishableKey');
+    var checkoutButton = document.getElementById('checkout-button');
+
+    checkoutButton.addEventListener('click', function () {
+        stripe.redirectToCheckout({
+            sessionId: document.getElementById('stripeSessionId').value
+        }).then(function (result) {
+            // Handle any errors
+        });
+    });
+</script>

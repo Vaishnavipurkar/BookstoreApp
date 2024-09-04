@@ -1,0 +1,22 @@
+﻿@model BookstoreApp.Models.Purchase
+@{
+    ViewData["Title"] = "Purchase Book";
+    var book = ViewBag.Book as BookstoreApp.Models.Book;
+}
+
+<h1>Purchase @book.Title Book</h1>
+
+<form asp-action="Create" method="post">
+    <input type="hidden" name="bookId" value="@book.Id" />
+    <div class="form-group">
+        <label asp-for="BuyerName"></label>
+        <input asp-for="BuyerName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Quantity"></label>
+        <input asp-for="Quantity" class="form-control" type="number" min="1" max="@book.Stock" value="1" />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Purchase</button>
+    </div>
+</form>

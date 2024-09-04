@@ -1,0 +1,45 @@
+﻿
+@model IEnumerable<BookstoreApp.Models.Purchase>
+
+@{
+    ViewBag.Title = "Purchase History";
+}
+
+<h2>Purchase History</h2>
+
+<form asp-action="History" method="get">
+    <p>
+        Search by Buyer Name or Book Title: <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="History" asp-route-sortOrder="@ViewBag.DateSortParam">Date</a>
+            </th>
+            <th>
+                Buyer Name
+            </th>
+            <th>
+                Book Title
+            </th>
+            <th>
+                <a asp-action="History" asp-route-sortOrder="@ViewBag.PriceSortParam">Total Price</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.PurchaseDate.ToShortDateString()</td>
+                <td>@item.BuyerName</td>
+                <td>@item.Book.Title</td>
+                <td>@item.TotalPrice</td>
+            </tr>
+        }
+    </tbody>
+</table>

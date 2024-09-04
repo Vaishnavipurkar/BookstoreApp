@@ -1,0 +1,19 @@
+﻿@model BookstoreApp.Models.Purchase
+
+<h2>Book Purchase Receipt</h2>
+
+<div class="receipt">
+    <p>Thank You <strong> @Model.BuyerName</strong> for Buying- "@Model.Book.Title"</p>
+    <p><strong>Book Title:</strong> @Model.Book.Title</p>
+    <p><strong>Author:</strong> @Model.Book.Author</p>
+    <p><strong>Genre:</strong> @Model.Book.Genre</p>
+    <p><strong>Buyer Name:</strong> @Model.BuyerName</p>
+    <p><strong>Quantity:</strong> @Model.Quantity</p>
+    <p><strong>Price per Unit:</strong> @Model.Book.Price.ToString("C")</p>
+    <p><strong>Total Price:</strong> @Model.TotalPrice.ToString("C")</p>
+    <p><strong>Purchase Date:</strong> @Model.PurchaseDate.ToString("g")</p>
+</div>
+
+<a href="@Url.Action("Details", "Books", new { id = Model.BookId })" class="btn btn-primary">Back to Book Details</a>
+<a href="@Url.Action("Index", "Books")" class="btn btn-secondary">Back to Book List</a>
+
